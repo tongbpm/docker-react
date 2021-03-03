@@ -8,6 +8,7 @@ RUN npm run build
 # /app/build <- all the stuff we care about
 
 FROM nginx
+EXPOSE 80
 # I want to copy something from the builder phase
 COPY --from=builder /app/build /usr/share/nginx/html
 # don't need to run nginx since nginx's 
